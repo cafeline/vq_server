@@ -1,0 +1,6 @@
+vq_server:
+  ros__parameters:
+    map_file: "/home/ryo/raspicat-sim-docker-vq/raspicat_vq_ws/src/maps/tsudanuma_voxelsize_05_compressed_map.h5"
+    frame_id: "map"
+    marker_topic: "compressed_map_markers"
+    marker_color_rgba: [0.1, 0.8, 0.4, 0.2]
