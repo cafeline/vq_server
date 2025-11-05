@@ -33,10 +33,10 @@ target_link_libraries(vq_server
 install(TARGETS vq_server
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY config
-  DESTINATION share/${PROJECT_NAME})
-
-install(DIRECTORY launch
+install(DIRECTORY
+  config
+  launch
+  maps
   DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
