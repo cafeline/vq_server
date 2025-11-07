@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 find_package(HDF5 REQUIRED COMPONENTS C HL)
 
 add_executable(vq_server src/vq_server.cpp)
@@ -23,6 +24,7 @@ ament_target_dependencies(vq_server
   rclcpp
   visualization_msgs
   geometry_msgs
+  ament_index_cpp
 )
 
 target_link_libraries(vq_server

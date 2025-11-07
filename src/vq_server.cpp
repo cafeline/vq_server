@@ -14,6 +14,7 @@
 #include <geometry_msgs/msg/point.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
+#include <ament_index_cpp/get_package_share_directory.hpp>
 
 namespace
 {
@@ -602,7 +603,17 @@ public:
   {
     const std::string default_frame = "map";
     const std::string default_topic = "compressed_map_markers";
-    declare_parameter<std::string>("map_file", "");
+    std::string default_map_path;
+    try {
+      const auto share_dir = ament_index_cpp::get_package_share_directory("vq_server");
+      default_map_path = share_dir + "/maps/tsudanuma_voxelsize_05_compressed_map.h5";
+    } catch (const std::exception & ex) {
+      RCLCPP_WARN(
+        get_logger(),
+        "デフォルトマップのパス取得に失敗しました: %s",
+        ex.what());
+    }
+    declare_parameter<std::string>("map_file", default_map_path);
     declare_parameter<std::string>("frame_id", default_frame);
     declare_parameter<std::string>("marker_topic", default_topic);
     declare_parameter<std::vector<double>>(

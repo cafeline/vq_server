@@ -12,6 +12,7 @@
   <depend>rclcpp</depend>
   <depend>visualization_msgs</depend>
   <depend>geometry_msgs</depend>
+  <depend>ament_index_cpp</depend>
 
   <build_depend>libhdf5-dev</build_depend>
   <exec_depend>libhdf5</exec_depend>

@@ -1,6 +1,5 @@
 vq_server:
   ros__parameters:
-    map_file: ""
     frame_id: "map"
     marker_topic: "compressed_map_markers"
     marker_color_rgba: [0.1, 0.8, 0.4, 0.2]
