@@ -35,11 +35,18 @@ target_link_libraries(vq_server
 install(TARGETS vq_server
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY
+set(_share_resource_dirs
   config
   launch
   maps
-  DESTINATION share/${PROJECT_NAME})
+)
+
+foreach(dir ${_share_resource_dirs})
+  install(DIRECTORY ${dir}
+    DESTINATION share/${PROJECT_NAME})
+  install(DIRECTORY ${dir}
+    DESTINATION ../share/${PROJECT_NAME})
+endforeach()
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
