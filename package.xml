@@ -15,7 +15,8 @@
   <depend>ament_index_cpp</depend>
 
   <build_depend>libhdf5-dev</build_depend>
-  <exec_depend>libhdf5</exec_depend>
+  <!-- <exec_depend>libhdf5</exec_depend> -->
+   <exec_depend>libhdf5-dev</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
